@@ -184,6 +184,38 @@ else:
 # #### try-except e if
 
 # 21: Conversor de Temperatura
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+
+def convert_temperature():
+    try:
+        # Solicita ao usuário para escolher o tipo de conversão
+        conversion_type = input("Digite 'C' para converter de Celsius para Fahrenheit ou 'F' para converter de Fahrenheit para Celsius: ").strip().upper()
+        
+        if conversion_type == 'C':
+            # Solicita ao usuário a temperatura em Celsius e tenta converter para float
+            celsius = float(input("Digite a temperatura em Celsius: "))
+            fahrenheit = celsius_to_fahrenheit(celsius)
+            print(f"{celsius} graus Celsius são equivalentes a {fahrenheit} graus Fahrenheit.")
+        
+        elif conversion_type == 'F':
+            # Solicita ao usuário a temperatura em Fahrenheit e tenta converter para float
+            fahrenheit = float(input("Digite a temperatura em Fahrenheit: "))
+            celsius = fahrenheit_to_celsius(fahrenheit)
+            print(f"{fahrenheit} graus Fahrenheit são equivalentes a {celsius} graus Celsius.")
+        
+        else:
+            print("Tipo de conversão inválido. Por favor, digite 'C' ou 'F'.")
+    
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido para a temperatura.")
+
+# Chama a função de conversão
+convert_temperature()
+
 # 22: Verificador de Palíndromo
 # 23: Calculadora Simples
 # 24: Classificador de Números
